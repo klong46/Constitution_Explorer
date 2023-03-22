@@ -1,0 +1,12 @@
+{% extends 'conex/index.html' %} 
+
+{% block content %}
+{% if constitution_list %}
+    <ul>
+    {% for constitution in constitution_list %}
+        <li><a href="{% url 'conex:detail' constitution.id %}">{{ constitution.country }} -- {{constitution.write_date}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock content %}
