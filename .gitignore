@@ -8,3 +8,4 @@ db.sqlite3
 media
 .DS_Store
 word_histogram.html
+ConstitutionExplorer/conexsite/conex/templates/conex/word_histogram.html
