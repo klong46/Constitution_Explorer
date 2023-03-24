@@ -7,3 +7,4 @@ migrations
 db.sqlite3
 media
 .DS_Store
+word_histogram.html
