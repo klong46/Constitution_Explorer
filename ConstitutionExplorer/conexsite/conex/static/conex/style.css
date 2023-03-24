@@ -5,3 +5,7 @@
 .body-content{
     margin-top: 56px;
 }
+
+.modebar{
+    display: none;
+}
