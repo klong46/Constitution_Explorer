@@ -2,9 +2,9 @@
 
 {% block content %}
 {% if constitution_list %}
-    <ul>
+    <ul class="list-group">
     {% for constitution in constitution_list %}
-        <li><a href="{% url 'conex:detail' constitution.id %}">{{ constitution.country }} -- {{constitution.write_date}}</a></li>
+        <li><a class="list-group-item" href="{% url 'conex:detail' constitution.id %}">{{ constitution.country }} -- {{constitution.write_date}}</a></li>
     {% endfor %}
     </ul>
 {% endif %}
