@@ -18,15 +18,14 @@
     <title>Constitution Explorer</title>
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/conex">Home</a>
+          <a class="navbar-brand" href="/conex">{% load static %}<img src="{% static 'conex/images/compass.png' %}" alt="compass" width="40"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="{% url 'conex:about' %}">About</a>
               <a class="nav-link" href="{% url 'conex:map' %}">Map</a>
               <a class="nav-link" href="{% url 'conex:countries' %}">Countries</a>
             </div>
@@ -35,7 +34,7 @@
     </nav>
     <div class="body-content">
       {% block content %}
-      <p>Home page</p>
+      {% include "conex/home.html" %}
       {% endblock content %}
     </div>
   </body>

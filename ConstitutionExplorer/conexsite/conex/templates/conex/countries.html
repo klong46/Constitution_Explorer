@@ -1,12 +1,14 @@
 {% extends 'conex/index.html' %} 
 
 {% block content %}
-{% if constitution_list %}
+<div class="countries-list">
+    {% if constitution_list %}
     <ul class="list-group">
     {% for constitution in constitution_list %}
         <li><a class="list-group-item" href="{% url 'conex:detail' constitution.id %}">{{ constitution.country }} -- {{constitution.write_date}}</a></li>
     {% endfor %}
     </ul>
 {% endif %}
+</div>
 
 {% endblock content %}

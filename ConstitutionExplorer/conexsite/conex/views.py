@@ -5,13 +5,19 @@ from html.parser import HTMLParser
 import nltk
 import plotly.express as px
 
+from django.conf import settings
+import requests
+import os
+import json
+import folium
+import pandas as pd
+import requests
+import logging
+
 
 
 def index(request):
     return render(request, 'conex/index.html')
-
-def about(request):
-    return render(request, 'conex/about.html')
 
 def map(request):
     return render(request, 'conex/map.html')
@@ -34,7 +40,7 @@ class DetailView(generic.DetailView):
         x_data = [word[0] for word in most_common]
         y_data = [word[1] for word in most_common]
         y_data.reverse(), x_data.reverse()
-        fig = px.histogram(x=y_data,y=x_data, width=1300, height=700)
+        fig = px.histogram(x=y_data,y=x_data, width=1200, height=700)
         fig.update_layout(xaxis_title="Count", yaxis_title="Most Common Words")
         fig.update_traces(
             hovertemplate="<br>".join([
@@ -68,24 +74,33 @@ def get_common_words(html_text):
 
 
 # def add(request):
-
 #     # country_data_csv = open(os.path.join(settings.BASE_DIR, 'conex/static/conex/countr_ids.csv'))
 #     # country_data = pd.read_csv(country_data_csv)
 #     countries = Constitution.objects.all()
+#     url = 'https://www.constituteproject.org/service/constitutions'
+#     response = requests.get(url)
+#     data = response.json()
 
 #     for i in range(len(countries)):
 #         # country_id = country_data['country_id'][i]
-#         # url = 'https://www.constituteproject.org/service/html?cons_id='+country_id+'&lang=en'
-#         # response = requests.get(url)
-#         # data = response.json()
-#         # html = data['html']
+
+#         country_name = data[i]['country']
 #         country = Constitution.objects.get(pk=(i+1))
+#         country.country = country_name
 #         # country = Constitution()
 #         # country.country=country_data['country'][i]
 #         # country.constitution_text=html
-#         if(country.write_date == 'n'):
-#             country.write_date="Draft"
+#         # if(country.write_date == 'n'):
+#         #     country.write_date="Draft"
 #         # country.write_date=country.write_date[:-2]
 #         country.save()
     
 #     return render(request, 'conex/add.html')
+
+def add(request):
+    countries = Constitution.objects.all()[230:]
+    for i in range(len(countries)):
+        country = countries[i]
+        country.delete()
+
+    return render(request, 'conex/add.html')

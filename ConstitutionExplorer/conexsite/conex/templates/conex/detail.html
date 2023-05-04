@@ -1,7 +1,7 @@
 {% extends 'conex/index.html' %} 
 
 {% block content %}
-<ul class="nav nav-tabs bg-light justify-content-center nav-fill" id="constitution-tabs" role="tablist">
+<ul class="nav fixed-top nav-tabs bg-light justify-content-center nav-fill" id="constitution-tabs" role="tablist" style="margin-top: 65px;">
     <li class="nav-item" role="presentation">
       <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Text</a>
     </li>
@@ -10,8 +10,8 @@
     </li>
   </ul>
   <div class="tab-content" id="constitution-tab-content">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{{constitution.constitution_text | safe}}</div>
-    <div class="tab-pane fade" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
+    <div class="tab-pane fade show active constitution-text" id="home" role="tabpanel" aria-labelledby="home-tab">{{constitution.constitution_text | safe}}</div>
+    <div class="tab-pane fade analysis-chart" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
         {% include "conex/word_histogram.html" %}
     </div>
   </div>

@@ -1,5 +1,12 @@
+html, body {
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .map-title{
     text-align: center;
+    padding-top: 10px;
 }
 
 .body-content{
@@ -7,5 +14,80 @@
 }
 
 .modebar{
+    display: none;
+}
+
+.homepage-body{
+    background: url(images/cursive_close.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-top: 150px;
+}
+
+.homepage-title{
+    font-family: Luminari;
+    text-align: center;
+    color: white;
+    font-size: 65px;
+    font-weight: 800;
+    
+}
+
+.homepage-text{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    white-space: nowrap;
+}
+
+.compass-img{
+    text-align: center;
+    padding-bottom: 280px;
+}
+
+.icon-img{
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.icon-img:hover{
+    opacity: 1;
+}
+
+.image-box{
+    text-align: center;
+}
+
+.button-row{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.map-container{
+    height: 83vh;
+}
+
+.countries-list{
+    padding-top: 10px;
+}
+
+.constitution-text{
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.analysis-chart{
+    padding-left: 20px;
+}
+
+.latest-details{
+    pointer-events: none;
+    display: none;
+}
+
+.draft-details{
     display: none;
 }

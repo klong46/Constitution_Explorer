@@ -6,7 +6,6 @@ app_name = 'conex'
 urlpatterns = [
     path('', views.index, name='index'),
     path('map', views.map, name='map'),
-    path('about', views.about, name='about'),
     # path('add', views.add, name='add'),
     path('countries', views.CountriesView.as_view(), name='countries'),
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),

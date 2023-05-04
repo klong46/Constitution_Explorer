@@ -57,13 +57,15 @@ def map(request):
         line_opacity=.1,
         legend_name="Year Enacted",
         bins=bins,
-        highlight=True
+        highlight=True,
+        nan_fill_color="purple",
+        nan_fill_opacity=0.4,
     )
 
     choro.geojson.add_child(
         folium.features.GeoJsonTooltip(['tooltip'], style=style_function, labels=False))
 
     choro.add_to(map)
-    map.save("folium_map.html")
+    map.save("./templates/conex/year_enacted_map.html")
 
     return render(request, 'conex/map.html')
